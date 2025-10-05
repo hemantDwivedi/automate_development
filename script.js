@@ -1,12 +1,12 @@
-document.getElementById('buildBtn').addEventListener('click', () => {
-    const evtSource = new EventSource('/api/build/run?action=CLEAN_INSTALL');
-
-    const log = document.getElementById('log');
-    evtSource.onmessage = function(e) {
-        log.textContent += e.data + '\n';
-    };
-    evtSource.onerror = function(e) {
-        log.textContent += '[error] connection closed\n';
-        evtSource.close();
-    };
+$("#buildBtn").click(function() {
+    $.ajax({
+        url: 'api/build/start',
+        type: 'POST',
+        success: function(response) {
+            console.log('Build started successfully:', response);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error starting build:', error);
+        }
+    });
 });
