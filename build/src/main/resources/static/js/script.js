@@ -1,6 +1,6 @@
 $("#buildBtn").click(function() {
     $.ajax({
-        url: 'api/build/start',
+        url: '/api/build/start',
         type: 'POST',
         success: function(response) {
             console.log('Build started successfully:', response);

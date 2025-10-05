@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <title>Auto - Build</title>
     <style>
+        body {
+            background-color: #181a1b;
+            color: #e4e6eb;
+        }
+
         #buildBtn {
             background-color: #0078d4;
             color: #fff;
@@ -26,7 +31,7 @@
     <button id="buildBtn">Start Build</button>
     <pre id="log"></pre>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script th:src="@{/js/script.js}"></script>
 </body>
 
 </html>
