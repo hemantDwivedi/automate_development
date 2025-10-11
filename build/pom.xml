@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com</groupId>
 	<artifactId>build</artifactId>
-	<version>0.0.1</version>
+	<version>1.0</version>
 	<name>build</name>
 	<description>build</description>
 	<url/>
@@ -39,6 +39,8 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
+			<version>1.18.40</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -65,6 +67,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<excludes>
 						<exclude>
